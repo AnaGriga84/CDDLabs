@@ -1,8 +1,7 @@
-/*! Author: Ana Griga
-    Student Number: C00231441
-    Tutor: Joseph Kehoe
-    Lab1 Excercise1
-    Licence: GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+/*! \mainpage Excercise 1 Threads
+    \author Ana Griga , Student Number: C00231441
+    \date 27.10.2020
+    \version GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
 */
 
 /*! \file helloThreads.cpp
