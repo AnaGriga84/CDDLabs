@@ -1,12 +1,9 @@
   Labs1 Excercise1 Toolchain
-
   Author: Ana Griga
-  
-  <b>Student No:</b> C0023144
-  
-  <b>Tutor:</b> Joseph Kehoe
+  Student No: C0023144
+  Tutor: Joseph Kehoe
 
-<b>Tasks for this lab:</b>
+  Tasks for this lab:
 
 1.	Download the complete set of files using git to clone https://github.com/josephkehoe/CDD101
 2.  	Find and open the file helloThreads.cpp using emacs 
