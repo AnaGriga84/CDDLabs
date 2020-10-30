@@ -1,0 +1,11 @@
+  Labs3 Rendezvous
+  Author: Ana Griga
+  Student No: C0023144
+  Tutor: Joseph Kehoe
+  Licence: GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
+
+  Task for this lab:
+
+Using the Semaphore class we need to create a program that demonstrates the Ren-dezvous pattern. 
+A rendezvous occurs between two threads when thereis a point (in the code) 
+that both threads must reach before either cancontinue. (A meeting point or checkpoint)

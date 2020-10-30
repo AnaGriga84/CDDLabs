@@ -1,4 +1,4 @@
-/*! \mainpage Excercise 2 Semaphores
+/*! \mainpage Lab 2 Semaphores
     \author Ana Griga , Student Number: C00231441
     \date 27.10.2020
     \version GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
