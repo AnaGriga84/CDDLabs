@@ -20,8 +20,9 @@ void taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  sec
   std::this_thread::sleep_for(std::chrono::seconds(delay));
   std::cout <<"Task One has arrived! "<< std::endl;
 
-  /*! added Signal method after task one arrived print and before task one left print*/
+  /*! added Signal for first sem and then Wait for second sem after task one arrived print and before task one left print*/
   firstSem->Signal();
+  secondSem->Wait();
   //THIS IS THE RENDEZVOUS POINT!
   std::cout << "Task One has left!"<<std::endl;
 
@@ -32,7 +33,8 @@ void taskTwo(std::shared_ptr<Semaphore> firstSem, std::shared_ptr<Semaphore> sec
   std::this_thread::sleep_for(std::chrono::seconds(delay));
   std::cout <<"Task Two has arrived "<<std::endl;
 
-  /*! added Wait method after task two arrived print and before task two left print*/
+  /*! added Signal for second sem and Wait for first sem after task two arrived print and before task two left print*/
+  secondSem->Signal();
   firstSem->Wait();
   //THIS IS THE RENDEZVOUS POINT!
   std::cout << "Task Two has left "<<std::endl;
