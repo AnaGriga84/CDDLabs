@@ -1,0 +1,9 @@
+  Labs4 Mutual Exclusion using Semaphores
+  Author: Ana Griga
+  Student No: C0023144
+  Tutor: Joseph Kehoe
+
+  Tasks for this lab:
+
+In the main.cpp, the main function must create at least two threads demonstrating mutual exclusionin 
+action using a Semaphore.
