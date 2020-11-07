@@ -1,12 +1,9 @@
-<h3>Labs1 Excercise2 Semaphores</h3>
+Labs2 Semaphores
+Author: Ana Griga
+Student No: C0023144
+Tutor: Joseph Kehoe
 
-  <b>Author: </b> Ana Griga
-  
-  <b>Student No:</b> C0023144
-  
-  <b>Tutor:</b> Joseph Kehoe
-
-<b>Task for this lab:</b>
+Task for this lab:
 
 Edit the main.cppfile so that the two functions (taskOne and taskTwo) are run in seperate 
 threads and a semaphore is used to ensure that task One runs and exits before task Two
