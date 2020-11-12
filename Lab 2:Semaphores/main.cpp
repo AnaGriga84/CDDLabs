@@ -10,30 +10,33 @@
 #include <unistd.h>
 /*! \class Signal
     \brief An Implementation of Threads Using Semaphores 
-
    Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
-
 */
-/*! displays a message first*/
+/*! Displays a message first*/
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
   sleep(delay);
   std::cout <<"I ";
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
-  /*! added Signal method for task one after print*/
+  /*! Added Signal method for task one after print.
+  Signal operation is used to control the exit of a task from a critical section 
+  Signal is incrementing the value and carry on when the value is 0. 
+  If the value is negative it is incrementing the value and a waiting thread is started*/
   theSemaphore->Signal();
 }
-/*! displays a message second*/
+/*! Displays a message second*/
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
-  /*! added Wait method before the last print */
+  /*! Added Wait method before the last print.
+  Wait operation is used to control the entry of a task into the critical section
+  If the semaphore value is currently zero, then the calling thread will not return from 
+  the call to sem_wait() until it either locks the semaphore or the call is interrupted by a signal.*/
   theSemaphore->Wait(); 
   std::cout <<"This ";
   std::cout << "will ";
   std::cout << "appear ";
   std::cout << "second"<<std::endl;
 }
-
 
 int main(void){
   std::thread threadOne, threadTwo;

@@ -22,7 +22,7 @@ void barrierTask(std::shared_ptr<Semaphore> mutexSem, std::shared_ptr<Semaphore>
 {
 for (int i = 0; i<2; i++)
 {
-  //the rendezvous
+  /* The rendezvous */
   std::cout << "A";
   mutexSem -> Wait();
   barCount++;

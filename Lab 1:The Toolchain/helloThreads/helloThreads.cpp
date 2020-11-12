@@ -4,12 +4,7 @@
     \version GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
 */
 
-/*! \file helloThreads.cpp
-    \brief A Documented file.
-    
-    You should document all your files using doxygen.  
-    NOTE: Any files not documented in this manner will not be accepted!
-*/
+/*! All files documented using doxygen. */
 #include <iostream>
 #include <thread>
 #include <vector>
@@ -32,13 +27,11 @@
           std::cout << "Launched by thread " << tid << std::endl; 
 }
 
-
  /*! \fn int main()
     \brief The eponymous main function
     
     Forks off 10 threads using a vector of num_threads std::thread objects.
     Then joins each thread with the main thread and exits 
-   
 */
 int main() {
 
@@ -50,9 +43,8 @@ int main() {
 	   t=std::thread(call_from_thread,i++);
 	 }
 
- 
          std::cout << "Launched from the main\n";
- 
+
          /**< Join the threads with the main thread */
          for (auto& v :vt){
 	   v.join();

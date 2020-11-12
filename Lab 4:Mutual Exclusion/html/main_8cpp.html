@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mutual Exclusion using Semaphores: main.cpp File Reference</title>
+<title>Mutual Exclusion: main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Mutual Exclusion using Semaphores
+   <div id="projectname">Mutual Exclusion
    </div>
   </td>
  </tr>
@@ -104,12 +104,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>inizialize at 1 to make a mutex semaphore</p>
+<p>Inizialize at 1 to make a mutex semaphore</p>
 <p>&lt; Launch the threads <br  />
 </p>
 <p>&lt; Join the threads with the main thread</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00039">39</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00037">37</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -139,11 +139,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>displays a message that is split in to 2 sections to show how a rendezvous works </p>
-<p>thread arrives, if semaphore number is greater than 0, proceed and decrement seamphore number, else if number is 0 or lower threads will wait in a queue to be signaled</p>
+<p>Thread arrives, if semaphore number is greater than 0, proceed and decrement seamphore number, else if number is 0 or lower threads will wait in a queue to be signaled</p>
 <p>thread updates critical section</p>
-<p>thread calles signal which increments <a class="el" href="classSemaphore.html" title="A Semaphore Implementation.">Semaphore</a> number and wakes a random thread from the waiting queue</p>
+<p>Thread calles signal which increments <a class="el" href="classSemaphore.html" title="A Semaphore Implementation.">Semaphore</a> number and wakes a random thread from the waiting queue</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00024">24</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00022">22</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

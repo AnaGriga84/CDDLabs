@@ -72,9 +72,7 @@ $(function() {
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
-</div>
-<p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2b4729d561c345111ccab970fe11e229"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2b4729d561c345111ccab970fe11e229">taskOne</a> (std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; theSemaphore, int delay)</td></tr>
@@ -104,8 +102,6 @@ Functions</h2></td></tr>
 </p>
 <p>&lt; Wait for the threads to finish</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00038">38</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
 </div>
 </div>
 <a id="a2b4729d561c345111ccab970fe11e229"></a>
@@ -133,10 +129,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>displays a message first </p>
-<p>added <a class="el" href="classSignal.html" title="An Implementation of Threads Using Semaphores.">Signal</a> method for task one after print</p>
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00018">18</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>Displays a message first </p>
+<p>Added <a class="el" href="classSignal.html" title="An Implementation of Threads Using Semaphores Uses C++11 features such as mutex and condition variabl...">Signal</a> method for task one after print. <a class="el" href="classSignal.html" title="An Implementation of Threads Using Semaphores Uses C++11 features such as mutex and condition variabl...">Signal</a> operation is used to control the exit of a task from a critical section <a class="el" href="classSignal.html" title="An Implementation of Threads Using Semaphores Uses C++11 features such as mutex and condition variabl...">Signal</a> is incrementing the value and carry on when the value is 0. If the value is negative it is incrementing the value and a waiting thread is started</p>
 
 </div>
 </div>
@@ -155,10 +149,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>displays a message second </p>
-<p>added Wait method before the last print</p>
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00028">28</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>Displays a message second </p>
+<p>Added Wait method before the last print. Wait operation is used to control the entry of a task into the critical section If the semaphore value is currently zero, then the calling thread will not return from the call to sem_wait() until it either locks the semaphore or the call is interrupted by a signal.</p>
 
 </div>
 </div>

@@ -1,21 +1,30 @@
 var indexSectionsWithContent =
 {
-  0: "ls",
+  0: "lmsuw",
   1: "s",
-  2: "l"
+  2: "ms",
+  3: "msuw",
+  4: "s",
+  5: "l"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "pages"
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Pages"
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Pages"
 };
 

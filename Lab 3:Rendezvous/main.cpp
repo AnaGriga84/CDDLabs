@@ -11,16 +11,18 @@
 
 /*! \class Signal
     \brief An Implementation of a Rendezvous using Semaphores
-
+    Two threads rendezvous at a point of execution, and neither is allowed to proceed until both have arrived.
    Uses C++11 features such as mutex and condition variables to implement an example of a rendezvous for threads
-
 */
-/*! displays a message that is split in to 2 sections to show how a rendezvous works*/
+/*! Displays a message that is split in to 2 sections to show how a rendezvous works
+If Task One arrives first, it waits for Task Two. When Task two arrives, it wakes Task One and might proceed 
+immediately to its waitin which case it blocks, allowing Task One to reach its signal, after which both threads can proceed*/
 void taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  secondSem, int delay){
   std::this_thread::sleep_for(std::chrono::seconds(delay));
   std::cout <<"Task One has arrived! "<< std::endl;
 
-  /*! added Signal for first sem and then Wait for second sem after task one arrived print and before task one left print*/
+  /*! Added Signal for first sem and then Wait for second sem after task one arrived print and before task one left print
+  */
   firstSem->Signal();
   secondSem->Wait();
   //THIS IS THE RENDEZVOUS POINT!
@@ -28,12 +30,12 @@ void taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  sec
 
 }
 
-/*! displays a message that is split in to 2 sections to show how a rendezvous works*/
+/*! Displays a message that is split in to 2 sections to show how a rendezvous works*/
 void taskTwo(std::shared_ptr<Semaphore> firstSem, std::shared_ptr<Semaphore> secondSem, int delay){
   std::this_thread::sleep_for(std::chrono::seconds(delay));
   std::cout <<"Task Two has arrived "<<std::endl;
 
-  /*! added Signal for second sem and Wait for first sem after task two arrived print and before task two left print*/
+  /*! Added Signal for second sem and Wait for first sem after task two arrived print and before task two left print*/
   secondSem->Signal();
   firstSem->Wait();
   //THIS IS THE RENDEZVOUS POINT!
