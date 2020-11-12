@@ -1,9 +1,9 @@
-/*! Lab 1 - Excercise2 Mutual Exclusion using Semaphores
-    Author : Ana Griga
-    Student Number : C00231441
-    Tutor : Joseph Kehoe
-    Licence : GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
+/*! \mainpage Lab 5 Reusable barriers with semaphore and mutex
+    \author Ana Griga , Student Number: C00231441
+    \date 07.11.2020
+    \version GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
 */
+#include "Semaphore.h"
 #include "Barrier.h"
 #include <iostream>
 #include <thread>
@@ -12,63 +12,61 @@
 
 static const int num_threads = 100;
 int sharedVariable=0;
-
+int barCount;
 
 /*! \fn barrierTask
     \brief An example of using a reusable barrier
 */
 /*! displays a message that is split in to 2 sections to show how a rendezvous works*/
-void barrierTask(std::shared_ptr<Barrier> theBarrier, int numLoops){
-
-  //for(int i=0;i<numLoops;++i){
-    //Do first bit of task
-    //std::cout << "A"<< i;
-    //Barrier
-    //theBarrier.wait();
-    //Do second half of task
-    //std::cout<< "B" << i;
-    //std::cout <<taskNum<< std::endl;
- 
-  //barrier code
-  aMutexSem -> Wait();
+void barrierTask(std::shared_ptr<Semaphore> mutexSem, std::shared_ptr<Semaphore> firstSem, std::shared_ptr<Semaphore> secondSem, int taskNum, int threadCount)
+{
+for (int i = 0; i<2; i++)
+{
+  //the rendezvous
+  std::cout << "A";
+  mutexSem -> Wait();
   barCount++;
-
-  if(barCount == threadCount)
+  if(barCount == num_threads)
   {
     std::cout << std::endl;
-    barCount--;
+    secondSem -> Wait();
     firstSem -> Signal();
-    aMutexSem -> Signal();
   }
-  else
-  {
-    aMutexSem -> Signal();
-    firstSem -> Wait();
-    aMutexSem -> Wait();
-    --barCount;
-    aMutexSem -> Signal();
-    firstSem -> Wait();
-  }
-  //barrier code end
-  std::cout << "A" << std::endl;
-  }
+  mutexSem -> Signal();
+  firstSem -> Wait();
+  firstSem -> Signal();
+  mutexSem -> Wait();
+  --barCount;
   
-
+  if (barCount == 0)
+  {
+    firstSem -> Wait();
+    secondSem -> Signal();
+  }
+  std::cout<< "B";
+  mutexSem -> Signal();
+  secondSem -> Wait();
+  secondSem -> Signal();
+}
 }
 
-
-int main(void){
+int main(void)
+{
   std::vector<std::thread> vt(num_threads);
-  std::shared_ptr<Barrier> aBarrier( new Barrier(num_threads));
+  std::shared_ptr<Semaphore> firstSem(new Semaphore);
+  std::shared_ptr<Semaphore> secondSem(new Semaphore(1));
+  std::shared_ptr<Semaphore> mutexSem(new Semaphore(1));
   /**< Launch the threads  */
   int i=0;
-  for(std::thread& t: vt){
-    t=std::thread(updateTask,aBarrier,10);
+  barCount = 0;
+  for(std::thread& t: vt)
+  {
+    t=std::thread(barrierTask, mutexSem, firstSem, secondSem, i++, num_threads);
   }
   /**< Join the threads with the main thread */
   for (auto& v :vt){
       v.join();
   }
-  std::cout << sharedVariable << std::endl;
+  std::cout << std::endl;
   return 0;
 }

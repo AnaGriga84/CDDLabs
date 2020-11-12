@@ -1,10 +1,10 @@
-The README file is a text file that explains what a project is.
-It should contain information on
+  Lab 5 Reusable barriers with semaphore and mutex
+  Author: Ana Griga
+  Student No: C0023144
+  Tutor: Joseph Kehoe
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+  Tasks for this lab:
+
+  The main function should show the barrier in action.
+  The main function must create at least two threads demonstrating a reusable barrier in action.
+  The reusable barrier class that employs the Semaphore Class was not implemented yet.
