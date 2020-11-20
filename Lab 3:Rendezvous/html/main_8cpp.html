@@ -72,15 +72,15 @@ $(function() {
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
-</div>
-<p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9141e3eb0b1274e58b053fd8a60a94e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9141e3eb0b1274e58b053fd8a60a94e3">taskOne</a> (std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; firstSem, std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; secondSem, int delay)</td></tr>
+<tr class="memdesc:a9141e3eb0b1274e58b053fd8a60a94e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will sleep and then will print "Task One has arrived! ", then a rendezvous will point to taskTwo and then will print "Task One has left!".  <a href="main_8cpp.html#a9141e3eb0b1274e58b053fd8a60a94e3">More...</a><br /></td></tr>
 <tr class="separator:a9141e3eb0b1274e58b053fd8a60a94e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7cb6b39082835c7e3c853c42af9ecdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac7cb6b39082835c7e3c853c42af9ecdc">taskTwo</a> (std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; firstSem, std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; secondSem, int delay)</td></tr>
-<tr class="separator:ac7cb6b39082835c7e3c853c42af9ecdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11b9252a93d48005fb013623f8070711"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a11b9252a93d48005fb013623f8070711">taskTwo</a> (std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; firstSem, std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; secondSem, int delay)</td></tr>
+<tr class="memdesc:a11b9252a93d48005fb013623f8070711"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will sleep and then will print "Task Two has arrived ", then a rendezvous will point to taskOne and then will print "Task Two has left ".  <a href="main_8cpp.html#a11b9252a93d48005fb013623f8070711">More...</a><br /></td></tr>
+<tr class="separator:a11b9252a93d48005fb013623f8070711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -102,8 +102,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>&lt; Launch the threads <br  />
 </p>
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00045">45</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -138,21 +136,30 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Displays a message that is split in to 2 sections to show how a rendezvous works If Task One arrives first, it waits for Task Two. When Task two arrives, it wakes Task One and might proceed immediately to its waitin which case it blocks, allowing Task One to reach its signal, after which both threads can proceed </p>
-<p>Added <a class="el" href="classSignal.html" title="An Implementation of a Rendezvous using Semaphores Two threads rendezvous at a point of execution,...">Signal</a> for first sem and then Wait for second sem after task one arrived print and before task one left print</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00020">20</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>This function will sleep and then will print "Task One has arrived! ", then a rendezvous will point to taskTwo and then will print "Task One has left!". </p>
+<p>Displays a message that is split in to 2 sections to show how a rendezvous works If Task One arrives first, it waits for Task Two. When Task two arrives, it wakes Task One and might proceed immediately to its waitin which case it blocks, allowing Task One to reach its signal, after which both threads can proceed</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">firstSem</td><td>- The first semaphore used for flow control, initialized at 0. </td></tr>
+    <tr><td class="paramname">secondSem</td><td>- The second <a class="el" href="classSemaphore.html" title="A Semaphore Implementation.">Semaphore</a> used for flow control, initialized at 0. </td></tr>
+    <tr><td class="paramname">delay</td><td>- The int used for number of seconds the thread should sleep.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The function will print "Task One has arrived! " before the rendezvous point. The function will print "Task One has left!" after the rendezvous point. There are several ways to handle the rendezvous. In this case firstSem is signeled and then put secondSem to wait and will do the opposite in taskTwo (wait firstSem and signal secondSem) <br  />
+ </p>
 
 </div>
 </div>
-<a id="ac7cb6b39082835c7e3c853c42af9ecdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7cb6b39082835c7e3c853c42af9ecdc">&#9670;&nbsp;</a></span>taskTwo()</h2>
+<a id="a11b9252a93d48005fb013623f8070711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b9252a93d48005fb013623f8070711">&#9670;&nbsp;</a></span>taskTwo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void taskTwo </td>
+          <td class="memname">taskTwo </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt;&#160;</td>
           <td class="paramname"><em>firstSem</em>, </td>
@@ -176,10 +183,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Displays a message that is split in to 2 sections to show how a rendezvous works </p>
-<p>Added <a class="el" href="classSignal.html" title="An Implementation of a Rendezvous using Semaphores Two threads rendezvous at a point of execution,...">Signal</a> for second sem and Wait for first sem after task two arrived print and before task two left print</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00034">34</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>This function will sleep and then will print "Task Two has arrived ", then a rendezvous will point to taskOne and then will print "Task Two has left ". </p>
+<p>Displays a message that is split in to 2 sections to show how a rendezvous works</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">firstSem</td><td>- The first semaphore used for flow control, initialized to 0. </td></tr>
+    <tr><td class="paramname">secondSem</td><td>- The second <a class="el" href="classSemaphore.html" title="A Semaphore Implementation.">Semaphore</a> used for flow control, inizialized to 0. </td></tr>
+    <tr><td class="paramname">delay</td><td>- The int used for number of seconds for the thread to sleep</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The function prints "Task One has arrived! " before the rendezvous point. The function prints "Task One has left!" after the rendezvous point. There are a several ways to handle the rendezvous. In this case firstSem is waited and secondSem is signeled and will do the opposite in taskOne (signal firstSem and wait secondSem) <br  />
+ </p>
 
 </div>
 </div>

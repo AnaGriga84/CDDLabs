@@ -13,30 +13,42 @@
    Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
 */
 /*! Displays a message first*/
-void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
+/*! \fn void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)
+    \brief This function will wait and then make print screen the message "I must print first"
+    \param theSemaphore - The semaphore used for flow control. Its initial value is 0.
+    \param delay - The int used for number of seconds the thread should sleep
+    This function prints "I must print first".
+*/
+void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)
+{
   sleep(delay);
   std::cout <<"I ";
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
-  /*! Added Signal method for task one after print.
-  Signal operation is used to control the exit of a task from a critical section 
-  Signal is incrementing the value and carry on when the value is 0. 
-  If the value is negative it is incrementing the value and a waiting thread is started*/
   theSemaphore->Signal();
 }
 /*! Displays a message second*/
-void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
-  /*! Added Wait method before the last print.
-  Wait operation is used to control the entry of a task into the critical section
-  If the semaphore value is currently zero, then the calling thread will not return from 
-  the call to sem_wait() until it either locks the semaphore or the call is interrupted by a signal.*/
+/*! \fn void taskTwo(std::shared_ptr<Semaphore> theSemaphore)
+    \brief This function will print screen the message "This will appear second"
+    \param theSemaphore - The semaphore used for flow control. Its initial value is 0.
+    This function has no delay parameter
+    This function prints "This will appear second".
+*/
+void taskTwo(std::shared_ptr<Semaphore> theSemaphore)
+{
   theSemaphore->Wait(); 
   std::cout <<"This ";
   std::cout << "will ";
   std::cout << "appear ";
   std::cout << "second"<<std::endl;
 }
+
+/*! \fn void main(void)
+    \brief Main function of the program which creates and runs the 2 threads
+    In the main function we create 2 threads and a semaphore
+    \param int taskOneDelay - The variable used to see how long thread 2 will sleep for
+*/
 
 int main(void){
   std::thread threadOne, threadTwo;

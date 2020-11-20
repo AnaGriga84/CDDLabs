@@ -73,15 +73,15 @@ $(function() {
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-</div>
-<p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3c9683d6a27ab2759968c0378236e661"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3c9683d6a27ab2759968c0378236e661">updateTask</a> (std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; firstSem, int numUpdates)</td></tr>
+<tr class="memdesc:a3c9683d6a27ab2759968c0378236e661"><td class="mdescLeft">&#160;</td><td class="mdescRight">An Implementation of Mutual Exclusion using Semaphores.  <a href="main_8cpp.html#a3c9683d6a27ab2759968c0378236e661">More...</a><br /></td></tr>
 <tr class="separator:a3c9683d6a27ab2759968c0378236e661"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a568b3afc214ba30be5bf526d6b27b611"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a568b3afc214ba30be5bf526d6b27b611">main</a> (void)</td></tr>
+<tr class="memdesc:a568b3afc214ba30be5bf526d6b27b611"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main method that creates a semaphore initialized to 1, so that first thread to be able to pass the first wait() of the semaphore.  <a href="main_8cpp.html#a568b3afc214ba30be5bf526d6b27b611">More...</a><br /></td></tr>
+<tr class="separator:a568b3afc214ba30be5bf526d6b27b611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -89,14 +89,14 @@ Variables</h2></td></tr>
 <tr class="separator:a2d5b01367ae1267dfac47c7875aac5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&nbsp;</a></span>main()</h2>
+<a id="a568b3afc214ba30be5bf526d6b27b611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a568b3afc214ba30be5bf526d6b27b611">&#9670;&nbsp;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int main </td>
+          <td class="memname">main </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -104,12 +104,13 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is the main method that creates a semaphore initialized to 1, so that first thread to be able to pass the first wait() of the semaphore. </p>
+<dl class="section return"><dt>Returns</dt><dd>The main method returns 0, for the program to exit normal. </dd></dl>
 <p>Inizialize at 1 to make a mutex semaphore</p>
 <p>&lt; Launch the threads <br  />
 </p>
 <p>&lt; Join the threads with the main thread</p>
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00037">37</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -138,12 +139,22 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>displays a message that is split in to 2 sections to show how a rendezvous works </p>
+
+<p>An Implementation of Mutual Exclusion using Semaphores. </p>
+<p>displays a message that is split in to 2 sections to show how a rendezvous works</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">firstsem</td><td>- <a class="el" href="classSemaphore.html" title="A Semaphore Implementation.">Semaphore</a> used to achieve mutual exclusion, initalized to 1 to allow the first wait() call to continue. </td></tr>
+    <tr><td class="paramname">numUpdates</td><td>- This is the variable incremented to show the use of mutual exclusion. This parameter will be incremented by one thread at the time. </td></tr>
+    <tr><td class="paramname">num_threads</td><td>- The number of threads that will create to do the work. </td></tr>
+    <tr><td class="paramname">sharedVariable</td><td>- The shared variable that all threads will try to increment.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Established a mutex lock arouns sharedVariable in order to only allow one thread at a time to have access to this variable. In the for loop : Thread arrives, if semaphore number is greater than 0, proceed and decrement seamphore number, else if number is 0 or lower threads will wait in a queue to be signaled. Then thread updates the critical section. Lastly thread calles signal which increments <a class="el" href="classSemaphore.html" title="A Semaphore Implementation.">Semaphore</a> number and wakes a random thread from the waiting queue. </p>
 <p>Thread arrives, if semaphore number is greater than 0, proceed and decrement seamphore number, else if number is 0 or lower threads will wait in a queue to be signaled</p>
 <p>thread updates critical section</p>
 <p>Thread calles signal which increments <a class="el" href="classSemaphore.html" title="A Semaphore Implementation.">Semaphore</a> number and wakes a random thread from the waiting queue</p>
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00022">22</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -159,8 +170,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00014">14</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

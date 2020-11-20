@@ -1,3 +1,8 @@
+/*! \mainpage Lab 4 Mutual Exclusion Using Semaphores
+    \author Ana Griga , Student Number: C00231441
+    \date 07.11.2020
+    \version GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
+*/]
 #ifndef SEMAPHORE_H
 #define SEMAPHORE_H 
 #include <mutex>
@@ -9,7 +14,6 @@
    Uses C++11 features such as mutex and condition variables to implement Semaphore
 
 */
-
 
 class Semaphore
 {

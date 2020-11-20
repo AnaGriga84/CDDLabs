@@ -16,7 +16,6 @@
 
 */
 
-
 class Semaphore
 {
 private:

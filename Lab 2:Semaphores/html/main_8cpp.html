@@ -76,21 +76,24 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2b4729d561c345111ccab970fe11e229"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2b4729d561c345111ccab970fe11e229">taskOne</a> (std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; theSemaphore, int delay)</td></tr>
+<tr class="memdesc:a2b4729d561c345111ccab970fe11e229"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will wait and then make print screen the message "I must print first".  <a href="main_8cpp.html#a2b4729d561c345111ccab970fe11e229">More...</a><br /></td></tr>
 <tr class="separator:a2b4729d561c345111ccab970fe11e229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4ea9570be601d182fa473c7ca431852"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae4ea9570be601d182fa473c7ca431852">taskTwo</a> (std::shared_ptr&lt; <a class="el" href="classSemaphore.html">Semaphore</a> &gt; theSemaphore)</td></tr>
+<tr class="memdesc:ae4ea9570be601d182fa473c7ca431852"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will print screen the message "This will appear second".  <a href="main_8cpp.html#ae4ea9570be601d182fa473c7ca431852">More...</a><br /></td></tr>
 <tr class="separator:ae4ea9570be601d182fa473c7ca431852"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6288eba0f8e8ad3ab1544ad731eb7667">main</a> (void)</td></tr>
+<tr class="memdesc:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function of the program which creates and runs the 2 threads In the main function we create 2 threads and a semaphore.  <a href="main_8cpp.html#a6288eba0f8e8ad3ab1544ad731eb7667">More...</a><br /></td></tr>
+<tr class="separator:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&nbsp;</a></span>main()</h2>
+<a id="a6288eba0f8e8ad3ab1544ad731eb7667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6288eba0f8e8ad3ab1544ad731eb7667">&#9670;&nbsp;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int main </td>
+          <td class="memname">void main </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -98,6 +101,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Main function of the program which creates and runs the 2 threads In the main function we create 2 threads and a semaphore. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>taskOneDelay - The variable used to see how long thread 2 will sleep for </td></tr>
+  </table>
+  </dd>
+</dl>
 <p>&lt; Launch the threads <br  />
 </p>
 <p>&lt; Wait for the threads to finish</p>
@@ -129,8 +140,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Displays a message first </p>
-<p>Added <a class="el" href="classSignal.html" title="An Implementation of Threads Using Semaphores Uses C++11 features such as mutex and condition variabl...">Signal</a> method for task one after print. <a class="el" href="classSignal.html" title="An Implementation of Threads Using Semaphores Uses C++11 features such as mutex and condition variabl...">Signal</a> operation is used to control the exit of a task from a critical section <a class="el" href="classSignal.html" title="An Implementation of Threads Using Semaphores Uses C++11 features such as mutex and condition variabl...">Signal</a> is incrementing the value and carry on when the value is 0. If the value is negative it is incrementing the value and a waiting thread is started</p>
+
+<p>This function will wait and then make print screen the message "I must print first". </p>
+<p>Displays a message first</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">theSemaphore</td><td>- The semaphore used for flow control. Its initial value is 0. </td></tr>
+    <tr><td class="paramname">delay</td><td>- The int used for number of seconds the thread should sleep This function prints "I must print first". </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -149,8 +168,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Displays a message second </p>
-<p>Added Wait method before the last print. Wait operation is used to control the entry of a task into the critical section If the semaphore value is currently zero, then the calling thread will not return from the call to sem_wait() until it either locks the semaphore or the call is interrupted by a signal.</p>
+
+<p>This function will print screen the message "This will appear second". </p>
+<p>Displays a message second</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">theSemaphore</td><td>- The semaphore used for flow control. Its initial value is 0. This function has no delay parameter This function prints "This will appear second". </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
