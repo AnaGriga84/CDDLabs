@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Barriers: Barrier Class Reference</title>
+<title>Barriers using Turnstiles: Barrier Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Barriers
+   <div id="projectname">Barriers using Turnstiles
    </div>
   </td>
  </tr>
@@ -77,18 +77,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4d825874d4435fb6d7c741fa4d2b540d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBarrier.html#a4d825874d4435fb6d7c741fa4d2b540d">Barrier</a> (int totalThreads)</td></tr>
 <tr class="separator:a4d825874d4435fb6d7c741fa4d2b540d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a401f40e73302009b305904ffc7825304"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBarrier.html#a401f40e73302009b305904ffc7825304">~Barrier</a> ()</td></tr>
+<tr class="memdesc:a401f40e73302009b305904ffc7825304"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor invoked when the objects are destroyed.  <a href="classBarrier.html#a401f40e73302009b305904ffc7825304">More...</a><br /></td></tr>
 <tr class="separator:a401f40e73302009b305904ffc7825304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a9d2e85e98b3d2081538bf0da29b60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBarrier.html#a83a9d2e85e98b3d2081538bf0da29b60">wait</a> ()</td></tr>
-<tr class="memdesc:a83a9d2e85e98b3d2081538bf0da29b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait function that calls <a class="el" href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd">phaseOne()</a> and <a class="el" href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3">phaseTwo()</a> functions in sequence.  <a href="classBarrier.html#a83a9d2e85e98b3d2081538bf0da29b60">More...</a><br /></td></tr>
+<tr class="memdesc:a83a9d2e85e98b3d2081538bf0da29b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait function that calls <a class="el" href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd" title="First phase of the rendezvous between n number of threads. Using semaphores and mutex to control the ...">phaseOne()</a> and <a class="el" href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3" title="Second phase of the rendezvous between n number of threads. Using semaphores and mutex to control the...">phaseTwo()</a> functions in sequence.  <a href="classBarrier.html#a83a9d2e85e98b3d2081538bf0da29b60">More...</a><br /></td></tr>
 <tr class="separator:a83a9d2e85e98b3d2081538bf0da29b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35c899565ad8db3425aed11daf4f09bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd">phaseOne</a> ()</td></tr>
+<tr class="memdesc:a35c899565ad8db3425aed11daf4f09bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">First phase of the rendezvous between n number of threads. Using semaphores and mutex to control the flow of all threads to wait at the end for the last thread to be ready before continuing.  <a href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd">More...</a><br /></td></tr>
 <tr class="separator:a35c899565ad8db3425aed11daf4f09bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63271a70390e6680b07d7e701ff6b2e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3">phaseTwo</a> ()</td></tr>
+<tr class="memdesc:a63271a70390e6680b07d7e701ff6b2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second phase of the rendezvous between n number of threads. Using semaphores and mutex to control the flow of all threads to wait at the end for the last thread to be ready before continuing.  <a href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3">More...</a><br /></td></tr>
 <tr class="separator:a63271a70390e6680b07d7e701ff6b2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Barrier_8h_source.html#l00059">59</a> of file <a class="el" href="Barrier_8h_source.html">Barrier.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Barrier_8h_source.html#l00067">67</a> of file <a class="el" href="Barrier_8h_source.html">Barrier.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4d825874d4435fb6d7c741fa4d2b540d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d825874d4435fb6d7c741fa4d2b540d">&#9670;&nbsp;</a></span>Barrier()</h2>
@@ -114,7 +117,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Barrier_8h_source.html#l00067">67</a> of file <a class="el" href="Barrier_8h_source.html">Barrier.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Barrier_8h_source.html#l00075">75</a> of file <a class="el" href="Barrier_8h_source.html">Barrier.h</a>.</p>
 
 </div>
 </div>
@@ -141,7 +144,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Barrier_8cpp_source.html#l00044">44</a> of file <a class="el" href="Barrier_8cpp_source.html">Barrier.cpp</a>.</p>
+<p>The destructor invoked when the objects are destroyed. </p>
+
+<p class="definition">Definition at line <a class="el" href="Barrier_8cpp_source.html#l00048">48</a> of file <a class="el" href="Barrier_8cpp_source.html">Barrier.cpp</a>.</p>
 
 </div>
 </div>
@@ -161,7 +166,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Barrier_8cpp_source.html#l00054">54</a> of file <a class="el" href="Barrier_8cpp_source.html">Barrier.cpp</a>.</p>
+<p>First phase of the rendezvous between n number of threads. Using semaphores and mutex to control the flow of all threads to wait at the end for the last thread to be ready before continuing. </p>
+
+<p class="definition">Definition at line <a class="el" href="Barrier_8cpp_source.html#l00058">58</a> of file <a class="el" href="Barrier_8cpp_source.html">Barrier.cpp</a>.</p>
 
 </div>
 </div>
@@ -180,7 +187,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Barrier_8cpp_source.html#l00077">77</a> of file <a class="el" href="Barrier_8cpp_source.html">Barrier.cpp</a>.</p>
+<p>Second phase of the rendezvous between n number of threads. Using semaphores and mutex to control the flow of all threads to wait at the end for the last thread to be ready before continuing. </p>
+
+<p class="definition">Definition at line <a class="el" href="Barrier_8cpp_source.html#l00081">81</a> of file <a class="el" href="Barrier_8cpp_source.html">Barrier.cpp</a>.</p>
 
 </div>
 </div>
@@ -199,9 +208,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Wait function that calls <a class="el" href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd">phaseOne()</a> and <a class="el" href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3">phaseTwo()</a> functions in sequence. </p>
+<p>Wait function that calls <a class="el" href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd" title="First phase of the rendezvous between n number of threads. Using semaphores and mutex to control the ...">phaseOne()</a> and <a class="el" href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3" title="Second phase of the rendezvous between n number of threads. Using semaphores and mutex to control the...">phaseTwo()</a> functions in sequence. </p>
 
-<p class="definition">Definition at line <a class="el" href="Barrier_8cpp_source.html#l00099">99</a> of file <a class="el" href="Barrier_8cpp_source.html">Barrier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Barrier_8cpp_source.html#l00103">103</a> of file <a class="el" href="Barrier_8cpp_source.html">Barrier.cpp</a>.</p>
 
 </div>
 </div>

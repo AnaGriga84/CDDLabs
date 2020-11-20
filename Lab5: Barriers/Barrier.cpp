@@ -4,6 +4,15 @@
     \version GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
 */
 
+/*!
+    \file Barrier.cpp
+    \brief Implementation of reusable barrier
+    The wait() and signal() in rapid succesion is called a turnstile and it allows//
+    one thread to pass at a time and it can be locked to bar all other threads.
+    Using semaphores to make a mutex and a turnstile to construct a reusable barrier
+    to allow the rendezvous of n number of threads to work inside a loop
+    Functions: Barrier destructor, phaseOne(), phaseTwo(), wait()
+*/
 
 // Barrier.cpp ---
 //
@@ -29,24 +38,19 @@
 #include "Barrier.h"
 #include <iostream>
 
-/*!
-    \file barrier.cpp
-    \brief The barrier class function
-The wait() and signal() in rapid succesion is called a turnstile and it allows//
-one thread to pass at a time and it can be locked to bar all other threads.
-*/
+
 
 
 /*!
-    \fn Barrier Destructor
-     \brief The destructor invoked when the objects are destroyed
+    \fn Barrier::~Barrier()
+    \brief The destructor invoked when the objects are destroyed
 */
 Barrier::~Barrier()
 {
     
 }
 /*!
-    \fn phaseOne function
+    \fn void Barrier::phaseOne()
      \brief First phase of the rendezvous between n number of threads. 
      Using semaphores and mutex to control the flow of all threads to wait at the end
      for the last thread to be ready before continuing
@@ -69,7 +73,7 @@ void Barrier::phaseOne()
     firstTurnStile.Signal();
 }
 /*!
-    \fn phaseTwo function
+    \fn void Barrier::phaseTwo()
      \brief Second phase of the rendezvous between n number of threads.
      Using semaphores and mutex to control the flow of all threads to wait at the end
      for the last thread to be ready before continuing
@@ -94,7 +98,7 @@ void Barrier::phaseTwo()
 }
 /*!
     \fn Barrier::wait()
-     \brief Wait function that calls phaseOne() and phaseTwo() functions in sequence
+    \brief Wait function that calls phaseOne() and phaseTwo() functions in sequence
 */
 void Barrier::wait()
 {

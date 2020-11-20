@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Barriers: Barrier.h Source File</title>
+<title>Barriers using Turnstiles: Barrier.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Barriers
+   <div id="projectname">Barriers using Turnstiles
    </div>
   </td>
  </tr>
@@ -113,34 +113,34 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/* Code: */</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Semaphore_8h.html">Semaphore.h</a>&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classBarrier.html">   59</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBarrier.html">Barrier</a></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">int</span> numThreads;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="classSemaphore.html">Semaphore</a> mutex{1};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="classSemaphore.html">Semaphore</a> firstTurnStile{0};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="classSemaphore.html">Semaphore</a> secondTurnStile{1};</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classBarrier.html#a4d825874d4435fb6d7c741fa4d2b540d">   67</a></span>&#160;  <a class="code" href="classBarrier.html#a4d825874d4435fb6d7c741fa4d2b540d">Barrier</a>(<span class="keywordtype">int</span> totalThreads):numThreads(totalThreads){};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classBarrier.html#a401f40e73302009b305904ffc7825304">~Barrier</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classBarrier.html#a83a9d2e85e98b3d2081538bf0da29b60">wait</a>(); </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd">phaseOne</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3">phaseTwo</a>(); </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/* Barrier.h ends here */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Semaphore_8h.html">Semaphore.h</a>&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classBarrier.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBarrier.html">Barrier</a></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">int</span> numThreads;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classSemaphore.html">Semaphore</a> mutex{1};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classSemaphore.html">Semaphore</a> firstTurnStile{0};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="classSemaphore.html">Semaphore</a> secondTurnStile{1};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classBarrier.html#a4d825874d4435fb6d7c741fa4d2b540d">   75</a></span>&#160;  <a class="code" href="classBarrier.html#a4d825874d4435fb6d7c741fa4d2b540d">Barrier</a>(<span class="keywordtype">int</span> totalThreads):numThreads(totalThreads){};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classBarrier.html#a401f40e73302009b305904ffc7825304">~Barrier</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classBarrier.html#a83a9d2e85e98b3d2081538bf0da29b60">wait</a>(); </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd">phaseOne</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3">phaseTwo</a>(); </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/* Barrier.h ends here */</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassBarrier_html_a4d825874d4435fb6d7c741fa4d2b540d"><div class="ttname"><a href="classBarrier.html#a4d825874d4435fb6d7c741fa4d2b540d">Barrier::Barrier</a></div><div class="ttdeci">Barrier(int totalThreads)</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8h_source.html#l00067">Barrier.h:67</a></div></div>
+<div class="ttc" id="aclassBarrier_html_a4d825874d4435fb6d7c741fa4d2b540d"><div class="ttname"><a href="classBarrier.html#a4d825874d4435fb6d7c741fa4d2b540d">Barrier::Barrier</a></div><div class="ttdeci">Barrier(int totalThreads)</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8h_source.html#l00075">Barrier.h:75</a></div></div>
 <div class="ttc" id="aclassSemaphore_html"><div class="ttname"><a href="classSemaphore.html">Semaphore</a></div><div class="ttdoc">A Semaphore Implementation.</div><div class="ttdef"><b>Definition:</b> <a href="Semaphore_8h_source.html#l00020">Semaphore.h:20</a></div></div>
-<div class="ttc" id="aclassBarrier_html_a63271a70390e6680b07d7e701ff6b2e3"><div class="ttname"><a href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3">Barrier::phaseTwo</a></div><div class="ttdeci">void phaseTwo()</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8cpp_source.html#l00077">Barrier.cpp:77</a></div></div>
-<div class="ttc" id="aclassBarrier_html_a401f40e73302009b305904ffc7825304"><div class="ttname"><a href="classBarrier.html#a401f40e73302009b305904ffc7825304">Barrier::~Barrier</a></div><div class="ttdeci">virtual ~Barrier()</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8cpp_source.html#l00044">Barrier.cpp:44</a></div></div>
-<div class="ttc" id="aclassBarrier_html_a35c899565ad8db3425aed11daf4f09bd"><div class="ttname"><a href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd">Barrier::phaseOne</a></div><div class="ttdeci">void phaseOne()</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8cpp_source.html#l00054">Barrier.cpp:54</a></div></div>
+<div class="ttc" id="aclassBarrier_html_a63271a70390e6680b07d7e701ff6b2e3"><div class="ttname"><a href="classBarrier.html#a63271a70390e6680b07d7e701ff6b2e3">Barrier::phaseTwo</a></div><div class="ttdeci">void phaseTwo()</div><div class="ttdoc">Second phase of the rendezvous between n number of threads. Using semaphores and mutex to control the...</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8cpp_source.html#l00081">Barrier.cpp:81</a></div></div>
+<div class="ttc" id="aclassBarrier_html_a401f40e73302009b305904ffc7825304"><div class="ttname"><a href="classBarrier.html#a401f40e73302009b305904ffc7825304">Barrier::~Barrier</a></div><div class="ttdeci">virtual ~Barrier()</div><div class="ttdoc">The destructor invoked when the objects are destroyed.</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8cpp_source.html#l00048">Barrier.cpp:48</a></div></div>
+<div class="ttc" id="aclassBarrier_html_a35c899565ad8db3425aed11daf4f09bd"><div class="ttname"><a href="classBarrier.html#a35c899565ad8db3425aed11daf4f09bd">Barrier::phaseOne</a></div><div class="ttdeci">void phaseOne()</div><div class="ttdoc">First phase of the rendezvous between n number of threads. Using semaphores and mutex to control the ...</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8cpp_source.html#l00058">Barrier.cpp:58</a></div></div>
 <div class="ttc" id="aSemaphore_8h_html"><div class="ttname"><a href="Semaphore_8h.html">Semaphore.h</a></div></div>
-<div class="ttc" id="aclassBarrier_html_a83a9d2e85e98b3d2081538bf0da29b60"><div class="ttname"><a href="classBarrier.html#a83a9d2e85e98b3d2081538bf0da29b60">Barrier::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">Wait function that calls phaseOne() and phaseTwo() functions in sequence.</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8cpp_source.html#l00099">Barrier.cpp:99</a></div></div>
-<div class="ttc" id="aclassBarrier_html"><div class="ttname"><a href="classBarrier.html">Barrier</a></div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8h_source.html#l00059">Barrier.h:59</a></div></div>
+<div class="ttc" id="aclassBarrier_html_a83a9d2e85e98b3d2081538bf0da29b60"><div class="ttname"><a href="classBarrier.html#a83a9d2e85e98b3d2081538bf0da29b60">Barrier::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">Wait function that calls phaseOne() and phaseTwo() functions in sequence.</div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8cpp_source.html#l00103">Barrier.cpp:103</a></div></div>
+<div class="ttc" id="aclassBarrier_html"><div class="ttname"><a href="classBarrier.html">Barrier</a></div><div class="ttdef"><b>Definition:</b> <a href="Barrier_8h_source.html#l00067">Barrier.h:67</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

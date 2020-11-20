@@ -5,12 +5,19 @@
 
   Tasks for this lab:
 
+  Create a barrier class using semaphores that will allow us to organise a rendezvous between n threads.
+  The barrier class is created using turnstiles.
+  The main function will create at least two threads demonstrating a reusable barrier in action.
+
+  The wait() and signal() in rapid succesion is called a turnstile and it allows
+  one thread to pass at a time and it can be locked to bar all other threads.
+  
   Reusable Barrier, sometimes called a two-phase barrier because it forces all the threads to wait twice: 
   once for all the threads to arrive and again for all thethreads to execute the critical section.
+  
   The barrier is reusable (cyclic) and will reset after all threads pass
   through.  So each thread can wait on the same barrier instance on entry and
   on exit from their critical section.
-  We should create the barrier.cpp class using turnstiles
-  The main function should show the barrier in action.
-  The main function must create at least two threads demonstrating a reusable barrier in action.
-  The reusable barrier class that employs the Semaphore Class was not implemented yet.
+ 
+
+  
