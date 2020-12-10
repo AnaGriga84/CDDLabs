@@ -1,0 +1,20 @@
+  Lab 6 Producer Consumer
+  Author: Ana Griga
+  Student No: C0023144
+  Tutor: Joseph Kehoe
+
+ Task for Lab 6:
+
+ Created a program that has two parts. 
+ A producer and a consumer.
+
+ Producer
+ The producer generates random characters from ‘a’ to ‘z’. 
+ It adds these to a thread safe buffer that has a finite holding capacity of N characters. 
+ 
+ Consumer
+ The consumer takes these letters from the buffer and capitalize them.
+
+ The main file demonstrates the producer consumer implementation in 
+ action by creating a number of consumers and producers and showing them inaction.
+ 
